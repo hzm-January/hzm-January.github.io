@@ -79,13 +79,15 @@
 
 <meta name="keywords" content="计算机组成与设计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一章 | 计算机概要与技术 | 程序性能影响因素及优化">
-<meta property="og:url" content="http://yoursite.com/2019/03/09/computer-organization-and-design/00-01-程序性能影响因素及优化/index.html">
+<meta property="og:title" content="第二章 | 计算机的语言 | 计算机硬件的操作数">
+<meta property="og:url" content="http://yoursite.com/2019/03/15/computer-organization-and-design/02-02-硬件的操作数/index.html">
 <meta property="og:site_name" content="houzm">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-09T11:02:07.530Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/15/computer-organization-and-design/02-02-硬件的操作数/misp-register.png">
+<meta property="og:updated_time" content="2019-03-16T00:00:50.398Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一章 | 计算机概要与技术 | 程序性能影响因素及优化">
+<meta name="twitter:title" content="第二章 | 计算机的语言 | 计算机硬件的操作数">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/15/computer-organization-and-design/02-02-硬件的操作数/misp-register.png">
 
 
 
@@ -115,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/09/computer-organization-and-design/00-01-程序性能影响因素及优化/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/15/computer-organization-and-design/02-02-硬件的操作数/">
 
 
 
 
 
-  <title>第一章 | 计算机概要与技术 | 程序性能影响因素及优化 | houzm</title>
+  <title>第二章 | 计算机的语言 | 计算机硬件的操作数 | houzm</title>
   
 
 
@@ -248,7 +250,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/09/computer-organization-and-design/00-01-程序性能影响因素及优化/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/computer-organization-and-design/02-02-硬件的操作数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="houzm">
@@ -265,7 +267,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第一章 | 计算机概要与技术 | 程序性能影响因素及优化</h1>
+          <h1 class="post-title" itemprop="name headline">第二章 | 计算机的语言 | 计算机硬件的操作数</h1>
         
 
         <div class="post-meta">
@@ -277,8 +279,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-09T16:50:04+08:00">
-                2019-03-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T20:58:10+08:00">
+                2019-03-15
               </time>
             
 
@@ -314,7 +316,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  25
+                  776
                 </span>
               
 
@@ -330,7 +332,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -353,20 +355,30 @@
       
         <hr>
 <a id="more"></a>
-<h1 id="影响性能的因素"><a href="#影响性能的因素" class="headerlink" title="影响性能的因素"></a>影响性能的因素</h1><table>
-<thead>
-<tr>
-<th>软件或硬件组成元素</th>
-<th>该元素如何影响性能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><blockquote>
+<p>寄存器是中央处理器内的组成部分。寄存器是有限存贮容量的高速存贮部件，它们可用来暂存指令、数据和地址。在中央处理器的控制部件中，包含的寄存器有指令寄存器(IR)和程序计数器(PC)。在中央处理器的算术及逻辑部件中，寄存器有累加器(ACC)。</p>
+</blockquote>
+<ul>
+<li>寄存器由硬件直接构成且数量有限</li>
+<li>寄存器对程序员可见</li>
+</ul>
+<p><strong>字</strong>：计算机中的基本访问单位，通常是32位为一组<br>MIPS算术运算指令的操作数必须来自寄存器，MIPS体系结构中共有共有32个大小为32位的寄存器，因此处理器只能将少量数据保存在寄存器中<br><img src="/2019/03/15/computer-organization-and-design/02-02-硬件的操作数/misp-register.png" alt="MIPS中操作数"></p>
+<h2 id="MIPS中的寄存器"><a href="#MIPS中的寄存器" class="headerlink" title="MIPS中的寄存器"></a>MIPS中的寄存器</h2><p>$s0-$s7 变量寄存器<br>$t0-$t9 临时寄存器<br>$a0-$a3<br>$v0-$v1<br>$gp<br>$fp<br>$sp<br>$ra<br>$at 保留<br>$zero 值恒为0</p>
+<h1 id="存储器操作数"><a href="#存储器操作数" class="headerlink" title="存储器操作数"></a>存储器操作数</h1><h2 id="计算机如何存储数组或结构"><a href="#计算机如何存储数组或结构" class="headerlink" title="计算机如何存储数组或结构"></a>计算机如何存储数组或结构</h2><p>复杂数据结构中的数据元素远多于计算机中寄存器的个数，处理器只能将少量数据保存在寄存器中，所以需要将数据结构（数组和结构）存放在存储器（有数十亿数据元素）中</p>
+<h2 id="计算机如何加载数组或结构"><a href="#计算机如何加载数组或结构" class="headerlink" title="计算机如何加载数组或结构"></a>计算机如何加载数组或结构</h2><p>MIPS算术运算指令只对寄存器进行操作，因此MIPS必须通过数据传送指令来访问存储器中的一个字，指令必须给出存储器地址<br><strong>数据传送指令（data transfer instruction）</strong>：在存储器和寄存器之间移动数据的命令<br><strong>地址</strong>：用于在存储器空间中指明某种特定数据元素位置的值</p>
+<blockquote>
+<p>存储器可看做一个很大的下标从0开始的一维数组，地址就相当于数组的下标。</p>
+</blockquote>
+<p><strong>取数指令（load）</strong>：将数据从存储器复制到寄存器的数据传送指令<br><strong>存数指令（store）</strong>：将数据从寄存器复制到存储器的数据传送指令</p>
+<h2 id="计算机如何寻址"><a href="#计算机如何寻址" class="headerlink" title="计算机如何寻址"></a>计算机如何寻址</h2><p><strong>基址（base address）</strong>：数组的起始地址<br><strong>偏移量（offset）</strong>：数据传送指令中的常量<br><strong>基址寄存器（base register）</strong>：存放基址的寄存器<br><strong>字节编址</strong>：大多数体系结构按照字节编制。一个字的地址必和它所包含的4字节中的某个地址相匹配，且连续字的地址相差4<br><strong>对齐限制（alignment restriction）</strong>：数据地址与存储器的自然边界对齐的要求。如MIPS按照字节编址，所以其实地址必须是4的倍数</p>
+<h3 id="计算机寻址方式"><a href="#计算机寻址方式" class="headerlink" title="计算机寻址方式"></a>计算机寻址方式</h3><ul>
+<li>最左边或大端（big end）字节地址作为字地址</li>
+<li>最右边或小端（little end）字节地址作为字地址</li>
+</ul>
+<blockquote>
+<p>MIPS采用的是大端编址（big-endian）</p>
+</blockquote>
+<h3 id="偏移量"><a href="#偏移量" class="headerlink" title="偏移量"></a>偏移量</h3><p>对于使用字节编址的体系结构，在计算偏移量的时候需要注意，连续字的地址相差4，字的起始地址必须是4的倍数（对齐限制）</p>
 
       
     </div>
@@ -397,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/09/computer-organization-and-design/01-01-计算机应用的分类与特性/" rel="next" title="第一章 | 计算机概要与技术 | 计算机应用的分类与特性">
-                <i class="fa fa-chevron-left"></i> 第一章 | 计算机概要与技术 | 计算机应用的分类与特性
+              <a href="/2019/03/15/computer-organization-and-design/02-01-计算机的语言/" rel="next" title="第二章 | 计算机的语言 | 计算机的语言">
+                <i class="fa fa-chevron-left"></i> 第二章 | 计算机的语言 | 计算机的语言
               </a>
             
           </div>
@@ -406,10 +418,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/09/computer-organization-and-design/00-02-计算机系统结构中的8个伟大思想/" rel="prev" title="第一章 | 计算机概要与技术 | 计算机系统结构中的8个伟大思想">
-                第一章 | 计算机概要与技术 | 计算机系统结构中的8个伟大思想 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -550,7 +558,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#影响性能的因素"><span class="nav-number">1.</span> <span class="nav-text">影响性能的因素</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寄存器"><span class="nav-number">1.</span> <span class="nav-text">寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MIPS中的寄存器"><span class="nav-number">1.1.</span> <span class="nav-text">MIPS中的寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储器操作数"><span class="nav-number">2.</span> <span class="nav-text">存储器操作数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机如何存储数组或结构"><span class="nav-number">2.1.</span> <span class="nav-text">计算机如何存储数组或结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机如何加载数组或结构"><span class="nav-number">2.2.</span> <span class="nav-text">计算机如何加载数组或结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机如何寻址"><span class="nav-number">2.3.</span> <span class="nav-text">计算机如何寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机寻址方式"><span class="nav-number">2.3.1.</span> <span class="nav-text">计算机寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#偏移量"><span class="nav-number">2.3.2.</span> <span class="nav-text">偏移量</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

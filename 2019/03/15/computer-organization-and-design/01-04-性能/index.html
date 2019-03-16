@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="计算机组成与设计,">
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="计算机组成与设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一章 | 计算机概要与技术 | 性能">
+<meta property="og:url" content="http://yoursite.com/2019/03/15/computer-organization-and-design/01-04-性能/index.html">
+<meta property="og:site_name" content="houzm">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/03/15/computer-organization-and-design/01-04-性能/power-dissipation-wall.png">
+<meta property="og:updated_time" content="2019-03-15T09:26:39.750Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第一章 | 计算机概要与技术 | 性能">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/15/computer-organization-and-design/01-04-性能/power-dissipation-wall.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/15/computer-organization-and-design/01-04-性能/">
+
+
+
+
+
+  <title>第一章 | 计算机概要与技术 | 性能 | houzm</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">houzm</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/computer-organization-and-design/01-04-性能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="houzm">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="houzm">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">第一章 | 计算机概要与技术 | 性能</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T09:01:03+08:00">
+                2019-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<a id="more"></a>
+<h1 id="性能的定义"><a href="#性能的定义" class="headerlink" title="性能的定义"></a>性能的定义</h1><p>计算机性能的定义需要考虑其用途（如：个人计算机对降低响应时间（response time）感兴趣，数据中心对吞吐量（throughput）感兴趣）<br>不同的应用关注计算机性能的不同方面。要改进一个程序的性能，必须明确性能定义，然后通过测量程序的执行时间来寻找可能的性能瓶颈<br><strong>响应时间（response time）</strong>：也成为执行时间（execution time）或者消逝时间（elapsed time）或者墙上时钟时间（wall clock time），计算机完成某任务所需的总时间，包括硬盘访问、内存访问、I/O活动、操作系统开销和CPU执行时间等<br><strong>吞吐率（throughput）</strong>：也称为带宽（bandwidth），性能的另一种度量参数，表示单位时间内完成的任务数量<br>通常情况下，响应时间和吞吐率相互影响</p>
+<h2 id="针对响应时间来讨论性能"><a href="#针对响应时间来讨论性能" class="headerlink" title="针对响应时间来讨论性能"></a>针对响应时间来讨论性能</h2><p>性能 = 1/执行时间<br>性能比较</p>
+<ul>
+<li>性能X &gt; 性能Y，则执行时间X &lt; 执行时间Y</li>
+<li>性能X / 性能Y = 执行时间Y / 执行时间X = n</li>
+</ul>
+<h1 id="性能的度量"><a href="#性能的度量" class="headerlink" title="性能的度量"></a>性能的度量</h1><p><strong>CPU执行时间（CPU时间）</strong>：只表示在CPU上花费的时间，而不包括等待I/O或运行其他程序的时间</p>
+<blockquote>
+<p>用户感受到的是程序的响应时间，而不是CPU执行时间</p>
+</blockquote>
+<p><strong>用户CPU时间</strong>：程序本身消耗的时间<br><strong>系统CPU时间</strong>：为执行程序而花费在操作系统上的时间</p>
+<blockquote>
+<p>通常精确区分系统CPU时间和用户CPU时间是很困难的，因为难以分清哪些操作系统的活动属于哪个用户程序，而且不同操作系统的功能也千差万别</p>
+</blockquote>
+<p><strong>系统性能</strong>：表示空载系统的响应时间<br><strong>CPU性能</strong>：表示用户CPU时间</p>
+<p>作为计算机用户，关心的是响应时间。但是作为计算机设计者，需要考虑如何度量计算机硬件完成基本功能的速度，几乎所有的计算机都用时钟来驱动硬件中发生的各种事情<br><strong>时钟周期（clock cycle）</strong>：时钟间隔的时间，也称为tick、clock tick、clock period、clock或者cycle<br><strong>时钟频率（clock rate）</strong>：时钟周期的倒数<br><strong>时钟长度</strong>：每个时钟周期持续的时间长度</p>
+<h1 id="指令的性能"><a href="#指令的性能" class="headerlink" title="指令的性能"></a>指令的性能</h1><p>计算机是通过执行指令来运行程序的，因此执行时间一定依赖于程序中的指令数</p>
+<p><strong>CPU时钟周期数 = 程序的指令数 * 每条指令的平均周期数</strong><br><strong>CPI</strong>：每条指令的时钟周期数，表示执行某个程序或程序片段时每条指令所需的时钟周期平均数</p>
+<blockquote>
+<p>不同的指令需要的时间不同，CPI是一个程序全部指令所用时钟周期数的平均值</p>
+</blockquote>
+<h1 id="CPU性能"><a href="#CPU性能" class="headerlink" title="CPU性能"></a>CPU性能</h1><h2 id="CPU性能公式"><a href="#CPU性能公式" class="headerlink" title="CPU性能公式"></a>CPU性能公式</h2><p>用户和设计者以不同的关注点看待性能，用户关心响应时间，设计者关心时钟周期。确定两者之间的关系，就能确定一个设计的变化对性能的影响<br><strong>程序的CPU执行时间 = 程序的CPU时钟周期数 * 时钟周期时间</strong><br><strong>程序的CPU执行时间 = 程序的CPU时钟周期数 / 时钟频率</strong></p>
+<blockquote>
+<p>减少时钟周期数的同时可能引起时钟周期时间的增加，所以需要在亮哥因素之间进行权衡</p>
+</blockquote>
+<p><strong>指令数</strong>：执行某程序所需的总指令数量<br><strong>程序的CPU执行时间 = 指令数 * CPI * 时钟周期时间</strong><br><strong>程序的CPU执行时间 = 指令数 * CPI / 时钟频率</strong></p>
+<h2 id="如何确定CPU性能公式中因素的值"><a href="#如何确定CPU性能公式中因素的值" class="headerlink" title="如何确定CPU性能公式中因素的值"></a>如何确定CPU性能公式中因素的值</h2><h3 id="时钟周期时间"><a href="#时钟周期时间" class="headerlink" title="时钟周期时间"></a>时钟周期时间</h3><p>计算机说明书中有时钟周期时间</p>
+<h3 id="时钟周期时间-1"><a href="#时钟周期时间-1" class="headerlink" title="时钟周期时间"></a>时钟周期时间</h3><p>通过运行程序来测量CPU的执行时间</p>
+<h3 id="指令数"><a href="#指令数" class="headerlink" title="指令数"></a>指令数</h3><ul>
+<li>通过用体系结构仿真器等软件工具预执行程序来测量出指令数</li>
+<li>通过大多数处理器中的硬件计数器来测量执行的指令数、平均CPI、性能损失源等</li>
+</ul>
+<blockquote>
+<p>指令数取决于计算机体系结构，并不依赖于计算机的具体实现，因而可以在不知道计算机全部实现细节个情况下对指令数进行测量</p>
+</blockquote>
+<p>指令组合（instruction mix）：在一个或多个程序中，指令的动态使用频度的评价指标</p>
+<h3 id="CPI"><a href="#CPI" class="headerlink" title="CPI"></a>CPI</h3><blockquote>
+<p>CPI与计算机的各种设计细节密切相关，包含存储系统和处理器结构，以及应用程序中不同类型的指令所占的比例，因此，CPI对于不同应用程序是不同的，对于相同指令集的不同实现方式也是不同的</p>
+</blockquote>
+<ul>
+<li>通过大多数处理器中的硬件计数器来测量CPI等</li>
+</ul>
+<h1 id="计算机的性能"><a href="#计算机的性能" class="headerlink" title="计算机的性能"></a>计算机的性能</h1><p>比较两台计算机时，必须考虑指令数、CPI、时钟周期（或者时钟频率），三者组合才能确定执行时间</p>
+<h1 id="程序性能"><a href="#程序性能" class="headerlink" title="程序性能"></a>程序性能</h1><table>
+<thead>
+<tr>
+<th style="text-align:left">硬件或软件指标</th>
+<th style="text-align:center">影响什么</th>
+<th style="text-align:left">如何影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">算法</td>
+<td style="text-align:center">指令数，CPI</td>
+<td style="text-align:left">算法决定源程序执行指令的数目，从而CPU执行指令的数目，可能通过较快或者较慢的指令影响CPI（例如：当算法使用更多的除法运算时，将会导致CPI增大）</td>
+</tr>
+<tr>
+<td style="text-align:left">编程语言</td>
+<td style="text-align:center">指令数，CPI</td>
+<td style="text-align:left">编程语言中的语句必须翻译为指令，从而决定了指令数。也可能影响CPI（例如：Java语言充分支持数据抽象，因此将进行间接调用，需要使用较高的CPI指令）</td>
+</tr>
+<tr>
+<td style="text-align:left">编译程序</td>
+<td style="text-align:center">指令数，CPI</td>
+<td style="text-align:left">编译程序决定了源程序到计算机指令的翻译过程，所以编译程序的效率即影响指令数又影响CPI，编译器会以复杂的方式影响CPI</td>
+</tr>
+<tr>
+<td style="text-align:left">指令集体系结构</td>
+<td style="text-align:center">指令数，CPI，时钟频率</td>
+<td style="text-align:left">指令集体系结构影响CPU性能的所有三个方面，完成某功能所需的指令数、每条指令的周期数以及处理器的时钟频率</td>
+</tr>
+</tbody>
+</table>
+<h1 id="功耗墙"><a href="#功耗墙" class="headerlink" title="功耗墙"></a>功耗墙</h1><p>时钟频率和功耗的增长是正相关<br><img src="/2019/03/15/computer-organization-and-design/01-04-性能/power-dissipation-wall.png" alt="时钟频率和功耗"></p>
+<p>占统治地位的集成电路技术是CMO（互补型金属氧化半导体），其主要的能耗来源是动态能耗，即晶体管开关过程中产生的能耗（晶体管从0翻转到1或从1翻转到0消耗的能量）<br>动态能耗取决于每个晶体管的负载电容和工作电压<br>0→1→0或者1→0→1：<strong>能耗 ∝ 负载电容 * 电压^2</strong><br>0→1或者1→0：<strong>能耗 ∝ 1/2 * 负载电容 * 电压^2</strong><br>0→1或者1→0：<strong>功耗 ∝ 1/2 * 负载电容 * 电压^2 * 开关频率</strong><br><strong>开关频率</strong>：开关频率是时钟频率的函数<br><strong>负载电容</strong>：链接到输出上的晶体管数量（称为扇出）和工艺的函数，该函数决定了导线和晶体管的电容</p>
+<h2 id="如何减少功耗"><a href="#如何减少功耗" class="headerlink" title="如何减少功耗"></a>如何减少功耗</h2><p>每次工艺更新换代，都通过降低电压来大幅减少能耗和功耗。一般来说，每代的电压降低大约15%，所以时钟频率增长为1000倍，但是功耗只增长了30倍<br>时钟频率的增加，导致功耗的增加，并且功耗已经到达了极限，无法再将处理器冷却下来</p>
+<h1 id="多处理器"><a href="#多处理器" class="headerlink" title="多处理器"></a>多处理器</h1><h2 id="为什么会出现多处理器"><a href="#为什么会出现多处理器" class="headerlink" title="为什么会出现多处理器"></a>为什么会出现多处理器</h2><p>功耗的极限迫使微处理器的设计产生了巨变：单片微处理器中加入多处理器，以求更大的吞吐率，不再追求降低单个程序运行在单个处理器上的响应时间<br><strong>processor</strong>：处理器<br><strong>micprocessor</strong>：微处理器或者多核处理器</p>
+<h2 id="多处理器如何改善性能"><a href="#多处理器如何改善性能" class="headerlink" title="多处理器如何改善性能"></a>多处理器如何改善性能</h2><p>程序员编写程序时充分利用多处理器的优势，可以显著改进响应时间</p>
+<h2 id="为什么编写显式并行程序如此困难"><a href="#为什么编写显式并行程序如此困难" class="headerlink" title="为什么编写显式并行程序如此困难"></a>为什么编写显式并行程序如此困难</h2><ul>
+<li>并行编程必须准确、必须能够解决重要问题、必须为用户或其他程序提供接口使用</li>
+<li>发挥并行硬件的速度，必须将应用划分相同数量的任务到每个核，并同时完成；必须减少调度开销</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机组成与设计/" rel="tag"># 计算机组成与设计</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/09/computer-organization-and-design/01-03-硬件/" rel="next" title="第一章 | 计算机概要与技术 | 硬件">
+                <i class="fa fa-chevron-left"></i> 第一章 | 计算机概要与技术 | 硬件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/15/computer-organization-and-design/02-01-计算机的语言/" rel="prev" title="第二章 | 计算机的语言 | 计算机的语言">
+                第二章 | 计算机的语言 | 计算机的语言 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="houzm">
+            
+              <p class="site-author-name" itemprop="name">houzm</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hzm-January" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:hzm_dream@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#性能的定义"><span class="nav-number">1.</span> <span class="nav-text">性能的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#针对响应时间来讨论性能"><span class="nav-number">1.1.</span> <span class="nav-text">针对响应时间来讨论性能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#性能的度量"><span class="nav-number">2.</span> <span class="nav-text">性能的度量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令的性能"><span class="nav-number">3.</span> <span class="nav-text">指令的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CPU性能"><span class="nav-number">4.</span> <span class="nav-text">CPU性能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU性能公式"><span class="nav-number">4.1.</span> <span class="nav-text">CPU性能公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何确定CPU性能公式中因素的值"><span class="nav-number">4.2.</span> <span class="nav-text">如何确定CPU性能公式中因素的值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时钟周期时间"><span class="nav-number">4.2.1.</span> <span class="nav-text">时钟周期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时钟周期时间-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">时钟周期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令数"><span class="nav-number">4.2.3.</span> <span class="nav-text">指令数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPI"><span class="nav-number">4.2.4.</span> <span class="nav-text">CPI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机的性能"><span class="nav-number">5.</span> <span class="nav-text">计算机的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序性能"><span class="nav-number">6.</span> <span class="nav-text">程序性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功耗墙"><span class="nav-number">7.</span> <span class="nav-text">功耗墙</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何减少功耗"><span class="nav-number">7.1.</span> <span class="nav-text">如何减少功耗</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多处理器"><span class="nav-number">8.</span> <span class="nav-text">多处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么会出现多处理器"><span class="nav-number">8.1.</span> <span class="nav-text">为什么会出现多处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多处理器如何改善性能"><span class="nav-number">8.2.</span> <span class="nav-text">多处理器如何改善性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么编写显式并行程序如此困难"><span class="nav-number">8.3.</span> <span class="nav-text">为什么编写显式并行程序如此困难</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">houzm</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">6.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

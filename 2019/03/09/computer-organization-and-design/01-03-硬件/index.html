@@ -84,7 +84,11 @@
 <meta property="og:site_name" content="houzm">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/03/09/computer-organization-and-design/01-03-硬件/A5-center-controll.png">
-<meta property="og:updated_time" content="2019-03-09T16:01:40.660Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/computer-organization-and-design/01-03-硬件/cpu_dev.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/computer-organization-and-design/01-03-硬件/dram_dev.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/computer-organization-and-design/01-03-硬件/wafer.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/computer-organization-and-design/01-03-硬件/IC-Manufacturing-Process.png">
+<meta property="og:updated_time" content="2019-03-15T10:01:38.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一章 | 计算机概要与技术 | 硬件">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/09/computer-organization-and-design/01-03-硬件/A5-center-controll.png">
@@ -316,7 +320,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k
+                  1.7k
                 </span>
               
 
@@ -332,7 +336,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  3
+                  6
                 </span>
               
             </div>
@@ -398,10 +402,10 @@
 </blockquote>
 <h2 id="易失性存储器（volatile-memory-也称主存储器（main-memory））"><a href="#易失性存储器（volatile-memory-也称主存储器（main-memory））" class="headerlink" title="易失性存储器（volatile memory 也称主存储器（main memory））"></a>易失性存储器（volatile memory 也称主存储器（main memory））</h2><blockquote>
 <p>仅在加电时保存数据，关闭电源，数据就会丢失</p>
+</blockquote>
 <ul>
 <li>保存运行中的程序</li>
 </ul>
-</blockquote>
 <h3 id="缓存（cache-memory）"><a href="#缓存（cache-memory）" class="headerlink" title="缓存（cache memory）"></a>缓存（cache memory）</h3><blockquote>
 <p>处理器内部，一般作为DRAM的缓冲，采用SRAM</p>
 </blockquote>
@@ -410,20 +414,79 @@
 </blockquote>
 <h2 id="非易失性存储器（nonvolatile-memory-也称二级存储器（main-memory））"><a href="#非易失性存储器（nonvolatile-memory-也称二级存储器（main-memory））" class="headerlink" title="非易失性存储器（nonvolatile memory 也称二级存储器（main memory））"></a>非易失性存储器（nonvolatile memory 也称二级存储器（main memory））</h2><blockquote>
 <p>在掉电时仍可保持数据</p>
+</blockquote>
 <ul>
 <li>保存两次运行之间的程序和数据</li>
 </ul>
-</blockquote>
 <h3 id="磁盘（magnetic-disk-也称硬盘（hard-disk））"><a href="#磁盘（magnetic-disk-也称硬盘（hard-disk））" class="headerlink" title="磁盘（magnetic disk 也称硬盘（hard disk））"></a>磁盘（magnetic disk 也称硬盘（hard disk））</h3><blockquote>
 <p>使用磁介质材料构成的以旋转盘片为基础的非易失性二级存储设备</p>
 </blockquote>
 <h3 id="闪存（flash-memory）"><a href="#闪存（flash-memory）" class="headerlink" title="闪存（flash memory）"></a>闪存（flash memory）</h3><blockquote>
 <p>在个人移动设备中使用闪存代替磁盘</p>
+</blockquote>
 <ul>
 <li>比DRAM慢但是更便宜</li>
 <li>比磁盘贵但是在体积、电容、可靠性和能耗方面都优于磁盘</li>
 <li>与硬盘和DRAM不同，闪存具有写100000~1000000次后老化或损坏的弱点。因此文件系统必须记录写操作的次数，并且具备避免存储器损坏的策略（例如：避免移动经常使用的数据）</li>
 </ul>
+<h1 id="处理器和存储器制造原理"><a href="#处理器和存储器制造原理" class="headerlink" title="处理器和存储器制造原理"></a>处理器和存储器制造原理</h1><h2 id="计算机实现技术的发展"><a href="#计算机实现技术的发展" class="headerlink" title="计算机实现技术的发展"></a>计算机实现技术的发展</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">年代</th>
+<th style="text-align:left">计算机中采用的技术</th>
+<th style="text-align:right">相对性价比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1951</td>
+<td style="text-align:left">真空管</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1965</td>
+<td style="text-align:left">晶体管</td>
+<td style="text-align:right">35</td>
+</tr>
+<tr>
+<td style="text-align:center">1975</td>
+<td style="text-align:left">集成电路</td>
+<td style="text-align:right">900</td>
+</tr>
+<tr>
+<td style="text-align:center">1995</td>
+<td style="text-align:left">超大规模集成电路</td>
+<td style="text-align:right">2400000</td>
+</tr>
+<tr>
+<td style="text-align:center">2013</td>
+<td style="text-align:left">甚大规模集成电路</td>
+<td style="text-align:right">25000000000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>晶体管（transistor）</strong>：一种由电流控制的简单开关<br><strong>集成电路（integrated circuit 简：IC）</strong>：由成千上万个晶体管组成的芯片<br><strong>超大规模集成电路（very large-scale integrated circuit 简：VLSI）</strong>：由数十万到数百万晶体管组成的电路<br><strong>摩尔定律</strong>：当价格不变时，集成电路（单芯片）上可容纳的元器件的数目，约每隔18-24个月便会增加一倍，性能也将提升一倍</p>
+<p><img src="/2019/03/09/computer-organization-and-design/01-03-硬件/cpu_dev.jpg" alt="CPU晶体管数量的发展"><br><img src="/2019/03/09/computer-organization-and-design/01-03-硬件/dram_dev.png" alt="DRAM容量的发展"></p>
+<h2 id="集成电路的制作过程"><a href="#集成电路的制作过程" class="headerlink" title="集成电路的制作过程"></a>集成电路的制作过程</h2><h3 id="原材料"><a href="#原材料" class="headerlink" title="原材料"></a>原材料</h3><p><strong>导体</strong>：电阻率很小且易于传导电流的物质<br><strong>绝缘体（电介质）</strong>：不善于传导电流的物质，电阻率极高<br><strong>半导体</strong>：常温下导电性能介于导体（conductor）与绝缘体（insulator）之间的材料<br><strong>硅</strong>：沙子中的一种物质 </p>
+<blockquote>
+<p>用特殊的化学方法对硅添加某些材料，改变其导电性，生成三种类型的材料</p>
+<ul>
+<li>良好的导电体（类似于细微的铜线或铝线）</li>
+<li>良好的绝缘体（类似于塑料或玻璃膜）</li>
+<li>可控的导电体或绝缘体（类似开关）</li>
+</ul>
+</blockquote>
+<p><strong>硅锭</strong>：一块由硅晶体组成的棒。直径大约在8~12英寸，长度约为12~24英寸<br><strong>晶圆</strong>：厚度不超过0.1英寸的硅锭片<br><strong>瑕疵</strong>：晶圆上微小的缺陷<br><strong>芯片（chip）</strong>：从晶圆中切割出来的一个单独的矩形区域<br><strong>成品率</strong>：合格芯片数占总芯片数的百分比</p>
+<blockquote>
+<p>成品率=1/(1+(单位面积的瑕疵数<em>芯片面积/2))^2<br>每晶圆的芯片数≈晶圆面积/芯片面积<br>每芯片的价格 = 每晶圆的价格/(每晶圆的芯片数</em>成品率)</p>
+</blockquote>
+<p><img src="/2019/03/09/computer-organization-and-design/01-03-硬件/wafer.png" alt="晶圆"><br><img src="/2019/03/09/computer-organization-and-design/01-03-硬件/IC-Manufacturing-Process.png" alt="芯片制造过程"></p>
+<p>可参考：<br><a href="https://wenku.baidu.com/view/625cba5402d8ce2f0066f5335a8102d277a2617d.html" target="_blank" rel="noopener">芯片制作全过程-从沙子到芯片</a><br><a href="https://wenku.baidu.com/view/63bde4b051e2524de518964bcf84b9d529ea2c5c.html" target="_blank" rel="noopener">集成电路制造工艺</a><br><a href="https://www.sohu.com/a/193494983_100010843" target="_blank" rel="noopener">通俗的说一说：一堆沙子是如何变成芯片的</a></p>
+<h1 id="硬件设计原则"><a href="#硬件设计原则" class="headerlink" title="硬件设计原则"></a>硬件设计原则</h1><h2 id="简单源于规整"><a href="#简单源于规整" class="headerlink" title="简单源于规整"></a>简单源于规整</h2><blockquote>
+<p>操作数个数不可变，为硬件设计提供了很大的帮助</p>
+</blockquote>
+<h2 id="越小越好"><a href="#越小越好" class="headerlink" title="越小越好"></a>越小越好</h2><blockquote>
+<p>寄存器个数限定为32，大量的寄存器可能会使时钟周期变长，因为电信号传输更远的距离必然花费更长的时间</p>
 </blockquote>
 
       
@@ -464,6 +527,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/15/computer-organization-and-design/01-04-性能/" rel="prev" title="第一章 | 计算机概要与技术 | 性能">
+                第一章 | 计算机概要与技术 | 性能 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -542,7 +609,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -604,7 +671,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#输入设备"><span class="nav-number">1.</span> <span class="nav-text">输入设备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出设备"><span class="nav-number">2.</span> <span class="nav-text">输出设备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#显示器（PC）"><span class="nav-number">2.1.</span> <span class="nav-text">显示器（PC）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#液晶显示（Liquid-Crystal-Display-LCD）"><span class="nav-number">2.1.1.</span> <span class="nav-text">液晶显示（Liquid Crystal Display, LCD）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态矩阵显示（active-matrix-display）"><span class="nav-number">2.1.2.</span> <span class="nav-text">动态矩阵显示（active matrix display）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸屏（后PC时代）"><span class="nav-number">2.2.</span> <span class="nav-text">触摸屏（后PC时代）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中央处理单元（central-processor-unit，CPU）"><span class="nav-number">3.</span> <span class="nav-text">中央处理单元（central processor unit，CPU）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据通路（运算器-datapath）"><span class="nav-number">3.1.</span> <span class="nav-text">数据通路（运算器 datapath）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器（control）"><span class="nav-number">3.2.</span> <span class="nav-text">控制器（control）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储器"><span class="nav-number">4.</span> <span class="nav-text">存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#易失性存储器（volatile-memory-也称主存储器（main-memory））"><span class="nav-number">4.1.</span> <span class="nav-text">易失性存储器（volatile memory 也称主存储器（main memory））</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存（cache-memory）"><span class="nav-number">4.1.1.</span> <span class="nav-text">缓存（cache memory）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">4.1.2.</span> <span class="nav-text">内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非易失性存储器（nonvolatile-memory-也称二级存储器（main-memory））"><span class="nav-number">4.2.</span> <span class="nav-text">非易失性存储器（nonvolatile memory 也称二级存储器（main memory））</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘（magnetic-disk-也称硬盘（hard-disk））"><span class="nav-number">4.2.1.</span> <span class="nav-text">磁盘（magnetic disk 也称硬盘（hard disk））</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闪存（flash-memory）"><span class="nav-number">4.2.2.</span> <span class="nav-text">闪存（flash memory）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#输入设备"><span class="nav-number">1.</span> <span class="nav-text">输入设备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出设备"><span class="nav-number">2.</span> <span class="nav-text">输出设备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#显示器（PC）"><span class="nav-number">2.1.</span> <span class="nav-text">显示器（PC）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#液晶显示（Liquid-Crystal-Display-LCD）"><span class="nav-number">2.1.1.</span> <span class="nav-text">液晶显示（Liquid Crystal Display, LCD）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态矩阵显示（active-matrix-display）"><span class="nav-number">2.1.2.</span> <span class="nav-text">动态矩阵显示（active matrix display）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸屏（后PC时代）"><span class="nav-number">2.2.</span> <span class="nav-text">触摸屏（后PC时代）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中央处理单元（central-processor-unit，CPU）"><span class="nav-number">3.</span> <span class="nav-text">中央处理单元（central processor unit，CPU）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据通路（运算器-datapath）"><span class="nav-number">3.1.</span> <span class="nav-text">数据通路（运算器 datapath）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器（control）"><span class="nav-number">3.2.</span> <span class="nav-text">控制器（control）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储器"><span class="nav-number">4.</span> <span class="nav-text">存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#易失性存储器（volatile-memory-也称主存储器（main-memory））"><span class="nav-number">4.1.</span> <span class="nav-text">易失性存储器（volatile memory 也称主存储器（main memory））</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存（cache-memory）"><span class="nav-number">4.1.1.</span> <span class="nav-text">缓存（cache memory）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">4.1.2.</span> <span class="nav-text">内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非易失性存储器（nonvolatile-memory-也称二级存储器（main-memory））"><span class="nav-number">4.2.</span> <span class="nav-text">非易失性存储器（nonvolatile memory 也称二级存储器（main memory））</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘（magnetic-disk-也称硬盘（hard-disk））"><span class="nav-number">4.2.1.</span> <span class="nav-text">磁盘（magnetic disk 也称硬盘（hard disk））</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闪存（flash-memory）"><span class="nav-number">4.2.2.</span> <span class="nav-text">闪存（flash memory）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理器和存储器制造原理"><span class="nav-number">5.</span> <span class="nav-text">处理器和存储器制造原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机实现技术的发展"><span class="nav-number">5.1.</span> <span class="nav-text">计算机实现技术的发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成电路的制作过程"><span class="nav-number">5.2.</span> <span class="nav-text">集成电路的制作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原材料"><span class="nav-number">5.2.1.</span> <span class="nav-text">原材料</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#硬件设计原则"><span class="nav-number">6.</span> <span class="nav-text">硬件设计原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单源于规整"><span class="nav-number">6.1.</span> <span class="nav-text">简单源于规整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#越小越好"><span class="nav-number">6.2.</span> <span class="nav-text">越小越好</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -643,7 +710,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.6k</span>
+    <span title="Site words total count">6.3k</span>
   
 </div>
 
