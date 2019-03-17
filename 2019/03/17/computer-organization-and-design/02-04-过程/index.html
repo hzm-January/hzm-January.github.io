@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="houzm">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-04-过程/store-program.png">
-<meta property="og:updated_time" content="2019-03-17T01:51:05.308Z">
+<meta property="og:updated_time" content="2019-03-17T05:54:04.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第二章 | 计算机语言 | 过程">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-04-过程/store-program.png">
@@ -316,7 +316,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  751
+                  1k
                 </span>
               
 
@@ -332,7 +332,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  3
                 </span>
               
             </div>
@@ -374,7 +374,18 @@
 <blockquote>
 <p>按照历史惯例，栈“增长”是按照地址从高到低的顺序进行的。这意为这将数据压栈时，栈指针值减小，数据出栈时，栈长度缩短，栈指针增大。</p>
 </blockquote>
-<h3 id="减少寄存器换出"><a href="#减少寄存器换出" class="headerlink" title="减少寄存器换出"></a>减少寄存器换出</h3><p>为了避免保存和恢复一个其值未被使用过的寄存器（通常是临时寄存器），体系结构会将寄存器分组，对临时寄存器不保存，对保留寄存器保存</p>
+<h3 id="减少寄存器换出"><a href="#减少寄存器换出" class="headerlink" title="减少寄存器换出"></a>减少寄存器换出</h3><p>为了避免保存和恢复一个其值未被使用过的寄存器（通常是临时寄存器），体系结构会将寄存器分组，只保存保留寄存器，不保存临时寄存器</p>
+<h1 id="嵌套过程"><a href="#嵌套过程" class="headerlink" title="嵌套过程"></a>嵌套过程</h1><p><strong>叶过程</strong>：不调用其他过程的过程<br><strong>非叶过程</strong>：调用其他过程的过程</p>
+<h2 id="嵌套过程调用中的问题"><a href="#嵌套过程调用中的问题" class="headerlink" title="嵌套过程调用中的问题"></a>嵌套过程调用中的问题</h2><p>主程序将参数保存到寄存器12，然后使用跳转链接指令调用A过程，A过程通过跳转链接指令调用B过程，参数同样存入寄存器12，由于A尚未结束任务，所以在寄存器12的使用上存在冲突，在保存返回地址的寄存器上也存在冲突</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>将所有必须保留的寄存器压栈</p>
+<ul>
+<li>调用者将所有调用后还需要的参数寄存器或者临时寄存器压栈</li>
+<li>被调用者将返回地址寄存器和被调用者使用的保存寄存器都压栈</li>
+</ul>
+<p><strong>全局指针（global pointer）</strong>：指向静态数据区的保留寄存器</p>
+<blockquote>
+<p>变量有静态变量和动态变量<br>c 语言中关键字static变量被视为静态，其余的变量被视为动态，为了简化静态数据的访问，体系结果中会保留一个寄存器，称为全局指针</p>
+</blockquote>
 
       
     </div>
@@ -414,6 +425,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/17/computer-organization-and-design/02-05-栈堆/" rel="prev" title="第二章 | 计算机语言 | 栈堆">
+                第二章 | 计算机语言 | 栈堆 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -492,12 +507,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
             
 
             
@@ -554,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#存储程序概念（stored-program）"><span class="nav-number">1.</span> <span class="nav-text">存储程序概念（stored-program）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程（procedure）"><span class="nav-number">2.</span> <span class="nav-text">过程（procedure）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行过程"><span class="nav-number">3.</span> <span class="nav-text">执行过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用过程"><span class="nav-number">4.</span> <span class="nav-text">调用过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器换出"><span class="nav-number">4.1.</span> <span class="nav-text">寄存器换出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈"><span class="nav-number">4.1.1.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少寄存器换出"><span class="nav-number">4.1.2.</span> <span class="nav-text">减少寄存器换出</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#存储程序概念（stored-program）"><span class="nav-number">1.</span> <span class="nav-text">存储程序概念（stored-program）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程（procedure）"><span class="nav-number">2.</span> <span class="nav-text">过程（procedure）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行过程"><span class="nav-number">3.</span> <span class="nav-text">执行过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用过程"><span class="nav-number">4.</span> <span class="nav-text">调用过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器换出"><span class="nav-number">4.1.</span> <span class="nav-text">寄存器换出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈"><span class="nav-number">4.1.1.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少寄存器换出"><span class="nav-number">4.1.2.</span> <span class="nav-text">减少寄存器换出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套过程"><span class="nav-number">5.</span> <span class="nav-text">嵌套过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套过程调用中的问题"><span class="nav-number">5.1.</span> <span class="nav-text">嵌套过程调用中的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-number">5.1.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -593,7 +617,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.9k</span>
+    <span title="Site words total count">11.5k</span>
   
 </div>
 

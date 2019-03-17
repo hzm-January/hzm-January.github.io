@@ -79,13 +79,16 @@
 
 <meta name="keywords" content="计算机组成与设计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一章 | 计算机概要与技术 | 计算机系统结构中的8个伟大思想">
-<meta property="og:url" content="http://yoursite.com/2019/03/09/computer-organization-and-design/00-02-计算机系统结构中的8个伟大思想/index.html">
+<meta property="og:title" content="第二章 | 计算机语言 | 栈堆">
+<meta property="og:url" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-05-栈堆/index.html">
 <meta property="og:site_name" content="houzm">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-17T11:08:39.295Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-05-栈堆/cache-huafen.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-05-栈堆/procedure-frame.png">
+<meta property="og:updated_time" content="2019-03-17T10:59:20.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一章 | 计算机概要与技术 | 计算机系统结构中的8个伟大思想">
+<meta name="twitter:title" content="第二章 | 计算机语言 | 栈堆">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-05-栈堆/cache-huafen.png">
 
 
 
@@ -115,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/09/computer-organization-and-design/00-02-计算机系统结构中的8个伟大思想/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/17/computer-organization-and-design/02-05-栈堆/">
 
 
 
 
 
-  <title>第一章 | 计算机概要与技术 | 计算机系统结构中的8个伟大思想 | houzm</title>
+  <title>第二章 | 计算机语言 | 栈堆 | houzm</title>
   
 
 
@@ -248,7 +251,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/09/computer-organization-and-design/00-02-计算机系统结构中的8个伟大思想/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/computer-organization-and-design/02-05-栈堆/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="houzm">
@@ -265,7 +268,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第一章 | 计算机概要与技术 | 计算机系统结构中的8个伟大思想</h1>
+          <h1 class="post-title" itemprop="name headline">第二章 | 计算机语言 | 栈堆</h1>
         
 
         <div class="post-meta">
@@ -277,8 +280,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-09T18:45:24+08:00">
-                2019-03-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T16:29:02+08:00">
+                2019-03-17
               </time>
             
 
@@ -287,6 +290,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -314,7 +339,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  729
+                  801
                 </span>
               
 
@@ -353,38 +378,27 @@
       
         <hr>
 <a id="more"></a>
-<h1 id="面向摩尔定律的设计（Moore’-Law）"><a href="#面向摩尔定律的设计（Moore’-Law）" class="headerlink" title="面向摩尔定律的设计（Moore’ Law）"></a>面向摩尔定律的设计（Moore’ Law）</h1><blockquote>
-<p>计算机设计者必须预测其设计完成时的工艺水平，而不是设计开始时的</p>
-</blockquote>
-<h1 id="使用抽象简化设计"><a href="#使用抽象简化设计" class="headerlink" title="使用抽象简化设计"></a>使用抽象简化设计</h1><blockquote>
-<p>提高硬件和软件生产率的主要技术之一是使用抽象（abstraction）来表示不同的设计层次，每个较低层次把细节对上层隐藏，在高层次中看不到低层次的细节，只能看到一个简化模型</p>
-</blockquote>
-<h2 id="从高级语言到硬件语言"><a href="#从高级语言到硬件语言" class="headerlink" title="从高级语言到硬件语言"></a>从高级语言到硬件语言</h2><blockquote>
-<p>计算机中的硬件只能执行极为简单的低级指令，从复杂的应用程序到简单的指令需要经过几个软件层次来将复杂的高层次的操作逐步解释或翻译成简单的计算机指令  </p>
-</blockquote>
-<h2 id="指令集体系结构（简称：体系结构）"><a href="#指令集体系结构（简称：体系结构）" class="headerlink" title="指令集体系结构（简称：体系结构）*"></a>指令集体系结构（简称：体系结构）*</h2><ul>
-<li>底层软件与硬件之间的抽象接口，该接口使得同一软件可以由成本不同、性能也不同的实现方法来完成</li>
-<li>可以让计算机设计者独立的讨论功能，不必考虑具体硬件</li>
+<p><img src="/2019/03/17/computer-organization-and-design/02-05-栈堆/cache-huafen.png" alt="内存空间的划分"></p>
+<h1 id="为什么会出现栈和堆"><a href="#为什么会出现栈和堆" class="headerlink" title="为什么会出现栈和堆"></a>为什么会出现栈和堆</h1><ul>
+<li>计算机中的寄存器数量过少，对于数组或结构等复杂数据结构，数据元素可能远多于计算机中的寄存器个数，因此需要放入存储器</li>
+<li>调用过程时，可能出现寄存器不够用的情况，需要将寄存器换出到存储器，栈是最理想的数据结构</li>
+<li>过程嵌套调用时，因为寄存器过少，导致数据和地址的保存冲突，需要将寄存器中旧的数据和地址存入存储器，以进行新数据和新地址的操作，然后从存储器中再取出旧的数据和地址继续操作</li>
 </ul>
-<h2 id="程序员进行结构化编程的工具：函数或过程"><a href="#程序员进行结构化编程的工具：函数或过程" class="headerlink" title="程序员进行结构化编程的工具：函数或过程"></a>程序员进行结构化编程的工具：函数或过程</h2><h1 id="加速大概率事件（common-case-fast）"><a href="#加速大概率事件（common-case-fast）" class="headerlink" title="加速大概率事件（common case fast）"></a>加速大概率事件（common case fast）</h1><blockquote>
-<p>加速大概率事件远比优化小概率事件更能提高性能，只能通过仔细的实验和评估才能得出</p>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈是换出寄存器最理想的数据结构—后进先出<br>栈：一种后进先出的队列，用于寄存器换出的数据结构<br>栈指针：指示栈中最近分配的地址的值，指示寄存器被换出的位置，或寄存器旧值的存放位置，在MIPS中栈指针是寄存器$sp<br>压栈：向栈中增加元素<br>出栈：向栈中移除元素</p>
+<blockquote>
+<p>按照历史惯例，栈“增长”是按照地址从高到低的顺序进行的。这意为这将数据压栈时，栈指针值减小，数据出栈时，栈长度缩短，栈指针增大。</p>
 </blockquote>
-<h2 id="指令集中根据使用频率来确定要定义的常数"><a href="#指令集中根据使用频率来确定要定义的常数" class="headerlink" title="指令集中根据使用频率来确定要定义的常数"></a>指令集中根据使用频率来确定要定义的常数</h2><p>常数操作数出现频率高，相对于存储器中取常数，包含常数的算术运算符指令执行速度更快，能耗更低，如MIPS中将寄存器$zero恒置为0；</p>
-<h2 id="体系结构中对寄存器的约定"><a href="#体系结构中对寄存器的约定" class="headerlink" title="体系结构中对寄存器的约定"></a>体系结构中对寄存器的约定</h2><p>比如MIPS，4个传递参数寄存器、2个寄存器用于返回结果、保存8个寄存器、10个暂存器，对大多数的过程调用来说足够使用</p>
-<h1 id="通过并行提高性能"><a href="#通过并行提高性能" class="headerlink" title="通过并行提高性能"></a>通过并行提高性能</h1><blockquote>
-<p>并行执行操作可以提高性能</p>
-</blockquote>
-<h1 id="通过流水线提高性能"><a href="#通过流水线提高性能" class="headerlink" title="通过流水线提高性能"></a>通过流水线提高性能</h1><blockquote>
-</blockquote>
-<h1 id="通过预测提高性能"><a href="#通过预测提高性能" class="headerlink" title="通过预测提高性能"></a>通过预测提高性能</h1><blockquote>
-<p>在某些情况下，如果假定从误预测恢复执行代价不高，并且预测的准确率相对较高，<br>则通过猜测的方式提前开始某些操作，要比等到确切知道这些操作应该启动时才开始快一些</p>
-</blockquote>
-<h1 id="存储层次（hierarchy-of-memory）"><a href="#存储层次（hierarchy-of-memory）" class="headerlink" title="存储层次（hierarchy of memory）"></a>存储层次（hierarchy of memory）</h1><blockquote>
-<p>存储器的速度通常影响性能、存储器的容量限制了解题的规模，可以通过存储器层次来解决这些相互矛盾的需求</p>
-</blockquote>
-<h1 id="通过冗余提高可靠性"><a href="#通过冗余提高可靠性" class="headerlink" title="通过冗余提高可靠性"></a>通过冗余提高可靠性</h1><blockquote>
-<p>计算机不仅需要速度快，还要工作可靠，任何一个物理器件都有可能失败，<br>因此可以通过使用冗余不减的方式提高系统的可靠性（dependable），冗余部件可以替代失效部件并可以帮助检测错误</p>
-</blockquote>
+<h1 id="栈中新分配空间"><a href="#栈中新分配空间" class="headerlink" title="栈中新分配空间"></a>栈中新分配空间</h1><p>过程帧（procedure）：栈中包含过程所保存的寄存器和局部变量的片段，也称为活动记录（activation record）<br>帧指针（frame pointer）：指向过程帧的第一个字<br><img src="/2019/03/17/computer-organization-and-design/02-05-栈堆/procedure-frame.png" alt="栈帧"></p>
+<h2 id="局部变量地址偏移的优化"><a href="#局部变量地址偏移的优化" class="headerlink" title="局部变量地址偏移的优化"></a>局部变量地址偏移的优化</h2><p>过程中栈指针可能发生变化，因此存储器中对局部变量的引用在过程中的不同位置可能具有不同的偏移量，这使得过程难以理解</p>
+<ul>
+<li>帧指针在一个过程中局部存储器引用提供一个固定的基址寄存器</li>
+<li>避免在过程中修改栈指针，尽量在过程的入口和出口调整栈</li>
+</ul>
+<p>参考：<br><a href="https://www.cnblogs.com/minisculestep/articles/4934947.html" target="_blank" rel="noopener">JVM中的栈帧</a></p>
+<h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1><p>内存中为动态数据结构提供的空间</p>
+<h1 id="堆中新分配空间"><a href="#堆中新分配空间" class="headerlink" title="堆中新分配空间"></a>堆中新分配空间</h1><p>堆：存储动态数据的空间<br>堆中的数据结构通常在声明期内增长或缩短，比如链表<br>在MIPS体系中，堆和栈相互增长，从而在两个段此消彼长的过程中达到内存的高效使用</p>
+<h1 id="c语言中的堆"><a href="#c语言中的堆" class="headerlink" title="c语言中的堆"></a>c语言中的堆</h1><p>C语言通过显式的函数调用在堆上分配和释放空间。malloc()在堆上分配空间并返回指向它的指针，free()释放指针指向的堆空间。<br>内存分配由C程序控制，这是很多错误产生的根源。<br>忘记释放空间会导致“内存泄漏”，会逐渐耗尽大量内存以至于操作系统可能崩溃<br>过早释放空间会导致“悬摆指针”（dangling pointer）。会造成指针指向程序不想访问的位置</p>
+<h1 id="Java语言中的堆"><a href="#Java语言中的堆" class="headerlink" title="Java语言中的堆"></a>Java语言中的堆</h1><p>Java使用自动的内存分配和无用单元回收机制来防止类似的错误发生<br><a href="https://blog.csdn.net/bai___ddd/article/details/78631525" target="_blank" rel="noopener">对计算机堆栈的理解</a></p>
 
       
     </div>
@@ -415,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/09/computer-organization-and-design/01-01-计算机应用的分类与特性/" rel="next" title="第一章 | 计算机概要与技术 | 计算机应用的分类与特性">
-                <i class="fa fa-chevron-left"></i> 第一章 | 计算机概要与技术 | 计算机应用的分类与特性
+              <a href="/2019/03/17/computer-organization-and-design/02-04-过程/" rel="next" title="第二章 | 计算机语言 | 过程">
+                <i class="fa fa-chevron-left"></i> 第二章 | 计算机语言 | 过程
               </a>
             
           </div>
@@ -425,8 +439,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/09/computer-organization-and-design/01-02-软件/" rel="prev" title="第一章 | 计算机概要与技术 | 软件">
-                第一章 | 计算机概要与技术 | 软件 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/17/computer-organization-and-design/02-06-字符编码/" rel="prev" title="第二章 | 计算机的语言 | 字符编码">
+                第二章 | 计算机的语言 | 字符编码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -577,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向摩尔定律的设计（Moore’-Law）"><span class="nav-number">1.</span> <span class="nav-text">面向摩尔定律的设计（Moore’ Law）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用抽象简化设计"><span class="nav-number">2.</span> <span class="nav-text">使用抽象简化设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从高级语言到硬件语言"><span class="nav-number">2.1.</span> <span class="nav-text">从高级语言到硬件语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令集体系结构（简称：体系结构）"><span class="nav-number">2.2.</span> <span class="nav-text">指令集体系结构（简称：体系结构）*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序员进行结构化编程的工具：函数或过程"><span class="nav-number">2.3.</span> <span class="nav-text">程序员进行结构化编程的工具：函数或过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加速大概率事件（common-case-fast）"><span class="nav-number">3.</span> <span class="nav-text">加速大概率事件（common case fast）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指令集中根据使用频率来确定要定义的常数"><span class="nav-number">3.1.</span> <span class="nav-text">指令集中根据使用频率来确定要定义的常数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体系结构中对寄存器的约定"><span class="nav-number">3.2.</span> <span class="nav-text">体系结构中对寄存器的约定</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过并行提高性能"><span class="nav-number">4.</span> <span class="nav-text">通过并行提高性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过流水线提高性能"><span class="nav-number">5.</span> <span class="nav-text">通过流水线提高性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过预测提高性能"><span class="nav-number">6.</span> <span class="nav-text">通过预测提高性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储层次（hierarchy-of-memory）"><span class="nav-number">7.</span> <span class="nav-text">存储层次（hierarchy of memory）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过冗余提高可靠性"><span class="nav-number">8.</span> <span class="nav-text">通过冗余提高可靠性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么会出现栈和堆"><span class="nav-number">1.</span> <span class="nav-text">为什么会出现栈和堆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈"><span class="nav-number">1.0.1.</span> <span class="nav-text">栈</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#栈中新分配空间"><span class="nav-number">2.</span> <span class="nav-text">栈中新分配空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量地址偏移的优化"><span class="nav-number">2.1.</span> <span class="nav-text">局部变量地址偏移的优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆"><span class="nav-number">3.</span> <span class="nav-text">堆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆中新分配空间"><span class="nav-number">4.</span> <span class="nav-text">堆中新分配空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c语言中的堆"><span class="nav-number">5.</span> <span class="nav-text">c语言中的堆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java语言中的堆"><span class="nav-number">6.</span> <span class="nav-text">Java语言中的堆</span></a></li></div>
             
 
           </div>
