@@ -84,7 +84,7 @@
 <meta property="og:site_name" content="houzm">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/03/15/computer-organization-and-design/01-04-性能/power-dissipation-wall.png">
-<meta property="og:updated_time" content="2019-03-15T09:26:39.750Z">
+<meta property="og:updated_time" content="2019-03-16T07:06:40.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一章 | 计算机概要与技术 | 性能">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/15/computer-organization-and-design/01-04-性能/power-dissipation-wall.png">
@@ -356,7 +356,7 @@
         <hr>
 <a id="more"></a>
 <h1 id="性能的定义"><a href="#性能的定义" class="headerlink" title="性能的定义"></a>性能的定义</h1><p>计算机性能的定义需要考虑其用途（如：个人计算机对降低响应时间（response time）感兴趣，数据中心对吞吐量（throughput）感兴趣）<br>不同的应用关注计算机性能的不同方面。要改进一个程序的性能，必须明确性能定义，然后通过测量程序的执行时间来寻找可能的性能瓶颈<br><strong>响应时间（response time）</strong>：也成为执行时间（execution time）或者消逝时间（elapsed time）或者墙上时钟时间（wall clock time），计算机完成某任务所需的总时间，包括硬盘访问、内存访问、I/O活动、操作系统开销和CPU执行时间等<br><strong>吞吐率（throughput）</strong>：也称为带宽（bandwidth），性能的另一种度量参数，表示单位时间内完成的任务数量<br>通常情况下，响应时间和吞吐率相互影响</p>
-<h2 id="针对响应时间来讨论性能"><a href="#针对响应时间来讨论性能" class="headerlink" title="针对响应时间来讨论性能"></a>针对响应时间来讨论性能</h2><p>性能 = 1/执行时间<br>性能比较</p>
+<h1 id="针对响应时间来讨论性能"><a href="#针对响应时间来讨论性能" class="headerlink" title="针对响应时间来讨论性能"></a>针对响应时间来讨论性能</h1><p>性能 = 1/执行时间<br>性能比较</p>
 <ul>
 <li>性能X &gt; 性能Y，则执行时间X &lt; 执行时间Y</li>
 <li>性能X / 性能Y = 执行时间Y / 执行时间X = n</li>
@@ -376,14 +376,14 @@
 <blockquote>
 <p>不同的指令需要的时间不同，CPI是一个程序全部指令所用时钟周期数的平均值</p>
 </blockquote>
-<h1 id="CPU性能"><a href="#CPU性能" class="headerlink" title="CPU性能"></a>CPU性能</h1><h2 id="CPU性能公式"><a href="#CPU性能公式" class="headerlink" title="CPU性能公式"></a>CPU性能公式</h2><p>用户和设计者以不同的关注点看待性能，用户关心响应时间，设计者关心时钟周期。确定两者之间的关系，就能确定一个设计的变化对性能的影响<br><strong>程序的CPU执行时间 = 程序的CPU时钟周期数 * 时钟周期时间</strong><br><strong>程序的CPU执行时间 = 程序的CPU时钟周期数 / 时钟频率</strong></p>
+<h1 id="CPU性能"><a href="#CPU性能" class="headerlink" title="CPU性能"></a>CPU性能</h1><h1 id="CPU性能公式"><a href="#CPU性能公式" class="headerlink" title="CPU性能公式"></a>CPU性能公式</h1><p>用户和设计者以不同的关注点看待性能，用户关心响应时间，设计者关心时钟周期。确定两者之间的关系，就能确定一个设计的变化对性能的影响<br><strong>程序的CPU执行时间 = 程序的CPU时钟周期数 * 时钟周期时间</strong><br><strong>程序的CPU执行时间 = 程序的CPU时钟周期数 / 时钟频率</strong></p>
 <blockquote>
 <p>减少时钟周期数的同时可能引起时钟周期时间的增加，所以需要在亮哥因素之间进行权衡</p>
 </blockquote>
 <p><strong>指令数</strong>：执行某程序所需的总指令数量<br><strong>程序的CPU执行时间 = 指令数 * CPI * 时钟周期时间</strong><br><strong>程序的CPU执行时间 = 指令数 * CPI / 时钟频率</strong></p>
-<h2 id="如何确定CPU性能公式中因素的值"><a href="#如何确定CPU性能公式中因素的值" class="headerlink" title="如何确定CPU性能公式中因素的值"></a>如何确定CPU性能公式中因素的值</h2><h3 id="时钟周期时间"><a href="#时钟周期时间" class="headerlink" title="时钟周期时间"></a>时钟周期时间</h3><p>计算机说明书中有时钟周期时间</p>
-<h3 id="时钟周期时间-1"><a href="#时钟周期时间-1" class="headerlink" title="时钟周期时间"></a>时钟周期时间</h3><p>通过运行程序来测量CPU的执行时间</p>
-<h3 id="指令数"><a href="#指令数" class="headerlink" title="指令数"></a>指令数</h3><ul>
+<h1 id="如何确定CPU性能公式中因素的值"><a href="#如何确定CPU性能公式中因素的值" class="headerlink" title="如何确定CPU性能公式中因素的值"></a>如何确定CPU性能公式中因素的值</h1><h2 id="时钟周期时间"><a href="#时钟周期时间" class="headerlink" title="时钟周期时间"></a>时钟周期时间</h2><p>计算机说明书中有时钟周期时间</p>
+<h2 id="时钟周期时间-1"><a href="#时钟周期时间-1" class="headerlink" title="时钟周期时间"></a>时钟周期时间</h2><p>通过运行程序来测量CPU的执行时间</p>
+<h2 id="指令数"><a href="#指令数" class="headerlink" title="指令数"></a>指令数</h2><ul>
 <li>通过用体系结构仿真器等软件工具预执行程序来测量出指令数</li>
 <li>通过大多数处理器中的硬件计数器来测量执行的指令数、平均CPI、性能损失源等</li>
 </ul>
@@ -391,7 +391,7 @@
 <p>指令数取决于计算机体系结构，并不依赖于计算机的具体实现，因而可以在不知道计算机全部实现细节个情况下对指令数进行测量</p>
 </blockquote>
 <p>指令组合（instruction mix）：在一个或多个程序中，指令的动态使用频度的评价指标</p>
-<h3 id="CPI"><a href="#CPI" class="headerlink" title="CPI"></a>CPI</h3><blockquote>
+<h2 id="CPI"><a href="#CPI" class="headerlink" title="CPI"></a>CPI</h2><blockquote>
 <p>CPI与计算机的各种设计细节密切相关，包含存储系统和处理器结构，以及应用程序中不同类型的指令所占的比例，因此，CPI对于不同应用程序是不同的，对于相同指令集的不同实现方式也是不同的</p>
 </blockquote>
 <ul>
@@ -431,10 +431,10 @@
 </table>
 <h1 id="功耗墙"><a href="#功耗墙" class="headerlink" title="功耗墙"></a>功耗墙</h1><p>时钟频率和功耗的增长是正相关<br><img src="/2019/03/15/computer-organization-and-design/01-04-性能/power-dissipation-wall.png" alt="时钟频率和功耗"></p>
 <p>占统治地位的集成电路技术是CMO（互补型金属氧化半导体），其主要的能耗来源是动态能耗，即晶体管开关过程中产生的能耗（晶体管从0翻转到1或从1翻转到0消耗的能量）<br>动态能耗取决于每个晶体管的负载电容和工作电压<br>0→1→0或者1→0→1：<strong>能耗 ∝ 负载电容 * 电压^2</strong><br>0→1或者1→0：<strong>能耗 ∝ 1/2 * 负载电容 * 电压^2</strong><br>0→1或者1→0：<strong>功耗 ∝ 1/2 * 负载电容 * 电压^2 * 开关频率</strong><br><strong>开关频率</strong>：开关频率是时钟频率的函数<br><strong>负载电容</strong>：链接到输出上的晶体管数量（称为扇出）和工艺的函数，该函数决定了导线和晶体管的电容</p>
-<h2 id="如何减少功耗"><a href="#如何减少功耗" class="headerlink" title="如何减少功耗"></a>如何减少功耗</h2><p>每次工艺更新换代，都通过降低电压来大幅减少能耗和功耗。一般来说，每代的电压降低大约15%，所以时钟频率增长为1000倍，但是功耗只增长了30倍<br>时钟频率的增加，导致功耗的增加，并且功耗已经到达了极限，无法再将处理器冷却下来</p>
-<h1 id="多处理器"><a href="#多处理器" class="headerlink" title="多处理器"></a>多处理器</h1><h2 id="为什么会出现多处理器"><a href="#为什么会出现多处理器" class="headerlink" title="为什么会出现多处理器"></a>为什么会出现多处理器</h2><p>功耗的极限迫使微处理器的设计产生了巨变：单片微处理器中加入多处理器，以求更大的吞吐率，不再追求降低单个程序运行在单个处理器上的响应时间<br><strong>processor</strong>：处理器<br><strong>micprocessor</strong>：微处理器或者多核处理器</p>
-<h2 id="多处理器如何改善性能"><a href="#多处理器如何改善性能" class="headerlink" title="多处理器如何改善性能"></a>多处理器如何改善性能</h2><p>程序员编写程序时充分利用多处理器的优势，可以显著改进响应时间</p>
-<h2 id="为什么编写显式并行程序如此困难"><a href="#为什么编写显式并行程序如此困难" class="headerlink" title="为什么编写显式并行程序如此困难"></a>为什么编写显式并行程序如此困难</h2><ul>
+<h1 id="如何减少功耗"><a href="#如何减少功耗" class="headerlink" title="如何减少功耗"></a>如何减少功耗</h1><p>每次工艺更新换代，都通过降低电压来大幅减少能耗和功耗。一般来说，每代的电压降低大约15%，所以时钟频率增长为1000倍，但是功耗只增长了30倍<br>时钟频率的增加，导致功耗的增加，并且功耗已经到达了极限，无法再将处理器冷却下来</p>
+<h1 id="多处理器"><a href="#多处理器" class="headerlink" title="多处理器"></a>多处理器</h1><h1 id="为什么会出现多处理器"><a href="#为什么会出现多处理器" class="headerlink" title="为什么会出现多处理器"></a>为什么会出现多处理器</h1><p>功耗的极限迫使微处理器的设计产生了巨变：单片微处理器中加入多处理器，以求更大的吞吐率，不再追求降低单个程序运行在单个处理器上的响应时间<br><strong>processor</strong>：处理器<br><strong>micprocessor</strong>：微处理器或者多核处理器</p>
+<h1 id="多处理器如何改善性能"><a href="#多处理器如何改善性能" class="headerlink" title="多处理器如何改善性能"></a>多处理器如何改善性能</h1><p>程序员编写程序时充分利用多处理器的优势，可以显著改进响应时间</p>
+<h1 id="为什么编写显式并行程序如此困难"><a href="#为什么编写显式并行程序如此困难" class="headerlink" title="为什么编写显式并行程序如此困难"></a>为什么编写显式并行程序如此困难</h1><ul>
 <li>并行编程必须准确、必须能够解决重要问题、必须为用户或其他程序提供接口使用</li>
 <li>发挥并行硬件的速度，必须将应用划分相同数量的任务到每个核，并同时完成；必须减少调度开销</li>
 </ul>
@@ -559,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -621,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#性能的定义"><span class="nav-number">1.</span> <span class="nav-text">性能的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#针对响应时间来讨论性能"><span class="nav-number">1.1.</span> <span class="nav-text">针对响应时间来讨论性能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#性能的度量"><span class="nav-number">2.</span> <span class="nav-text">性能的度量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令的性能"><span class="nav-number">3.</span> <span class="nav-text">指令的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CPU性能"><span class="nav-number">4.</span> <span class="nav-text">CPU性能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU性能公式"><span class="nav-number">4.1.</span> <span class="nav-text">CPU性能公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何确定CPU性能公式中因素的值"><span class="nav-number">4.2.</span> <span class="nav-text">如何确定CPU性能公式中因素的值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时钟周期时间"><span class="nav-number">4.2.1.</span> <span class="nav-text">时钟周期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时钟周期时间-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">时钟周期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令数"><span class="nav-number">4.2.3.</span> <span class="nav-text">指令数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPI"><span class="nav-number">4.2.4.</span> <span class="nav-text">CPI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机的性能"><span class="nav-number">5.</span> <span class="nav-text">计算机的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序性能"><span class="nav-number">6.</span> <span class="nav-text">程序性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功耗墙"><span class="nav-number">7.</span> <span class="nav-text">功耗墙</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何减少功耗"><span class="nav-number">7.1.</span> <span class="nav-text">如何减少功耗</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多处理器"><span class="nav-number">8.</span> <span class="nav-text">多处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么会出现多处理器"><span class="nav-number">8.1.</span> <span class="nav-text">为什么会出现多处理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多处理器如何改善性能"><span class="nav-number">8.2.</span> <span class="nav-text">多处理器如何改善性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么编写显式并行程序如此困难"><span class="nav-number">8.3.</span> <span class="nav-text">为什么编写显式并行程序如此困难</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#性能的定义"><span class="nav-number">1.</span> <span class="nav-text">性能的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#针对响应时间来讨论性能"><span class="nav-number">2.</span> <span class="nav-text">针对响应时间来讨论性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#性能的度量"><span class="nav-number">3.</span> <span class="nav-text">性能的度量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令的性能"><span class="nav-number">4.</span> <span class="nav-text">指令的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CPU性能"><span class="nav-number">5.</span> <span class="nav-text">CPU性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CPU性能公式"><span class="nav-number">6.</span> <span class="nav-text">CPU性能公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何确定CPU性能公式中因素的值"><span class="nav-number">7.</span> <span class="nav-text">如何确定CPU性能公式中因素的值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟周期时间"><span class="nav-number">7.1.</span> <span class="nav-text">时钟周期时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟周期时间-1"><span class="nav-number">7.2.</span> <span class="nav-text">时钟周期时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令数"><span class="nav-number">7.3.</span> <span class="nav-text">指令数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPI"><span class="nav-number">7.4.</span> <span class="nav-text">CPI</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机的性能"><span class="nav-number">8.</span> <span class="nav-text">计算机的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序性能"><span class="nav-number">9.</span> <span class="nav-text">程序性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功耗墙"><span class="nav-number">10.</span> <span class="nav-text">功耗墙</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何减少功耗"><span class="nav-number">11.</span> <span class="nav-text">如何减少功耗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多处理器"><span class="nav-number">12.</span> <span class="nav-text">多处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么会出现多处理器"><span class="nav-number">13.</span> <span class="nav-text">为什么会出现多处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多处理器如何改善性能"><span class="nav-number">14.</span> <span class="nav-text">多处理器如何改善性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么编写显式并行程序如此困难"><span class="nav-number">15.</span> <span class="nav-text">为什么编写显式并行程序如此困难</span></a></li></ol></div>
             
 
           </div>
@@ -660,7 +660,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.4k</span>
+    <span title="Site words total count">8.9k</span>
   
 </div>
 
