@@ -85,7 +85,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-06-字符编码/ascii.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-06-字符编码/unicode-table.png">
-<meta property="og:updated_time" content="2019-03-17T14:39:14.997Z">
+<meta property="og:updated_time" content="2019-03-17T14:45:48.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第二章 | 计算机的语言 | 字符编码">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/17/computer-organization-and-design/02-06-字符编码/ascii.png">
@@ -384,7 +384,7 @@
 <h1 id="ASCII编码"><a href="#ASCII编码" class="headerlink" title="ASCII编码"></a>ASCII编码</h1><p>ASCII码（American Standard Code for Information Interchange）：使用8位字节来表示字符<br><img src="/2019/03/17/computer-organization-and-design/02-06-字符编码/ascii.png" alt="ASCII码表示例"></p>
 <h1 id="Unicode编码"><a href="#Unicode编码" class="headerlink" title="Unicode编码"></a>Unicode编码</h1><p>Unicode是大多数人类语言中字母的通用编码，默认使用16位表示一个字符<br><img src="/2019/03/17/computer-organization-and-design/02-06-字符编码/unicode-table.png" alt="Unicode字母表示例"></p>
 <h2 id="为什么会出现Unicode编码"><a href="#为什么会出现Unicode编码" class="headerlink" title="为什么会出现Unicode编码"></a>为什么会出现Unicode编码</h2><p>要处理中文显然一个字节是不够的，至少需要两个字节，而且还不能和ASCII编码冲突，所以，中国制定了GB2312编码，用来把中文编进去。<br>可以想得到的是，全世界有上百种语言，日本把日文编到Shift_JIS里，韩国把韩文编到Euc-kr里，各国有各国的标准，就会不可避免地出现冲突，结果就是，在多语言混合的文本中，显示出来会有乱码。<br>因此，Unicode应运而生。Unicode把所有语言都统一到一套编码里，这样就不会再有乱码问题了。<br>Unicode标准也在不断发展，但最常用的是用两个字节表示一个字符（如果要用到非常偏僻的字符，就需要4个字节）。现代操作系统和大多数编程语言都直接支持Unicode。</p>
-<h2 id="ASCII编码和Unicode编码的区别"><a href="#ASCII编码和Unicode编码的区别" class="headerlink" title="ASCII编码和Unicode编码的区别"></a>ASCII编码和Unicode编码的区别</h2><p>ASCII编码是1个字节，而Unicode编码通常是2个字节。<br>字母A用ASCII编码是十进制的65，二进制的01000001；<br>字符0用ASCII编码是十进制的48，二进制的00110000，注意字符’0’和整数0是不同的；<br>汉字中已经超出了ASCII编码的范围，用Unicode编码是十进制的20013，二进制的01001110 00101101。<br>你可以猜测，如果把ASCII编码的A用Unicode编码，只需要在前面补0就可以，因此，A的Unicode编码是00000000 01000001。</p>
+<h2 id="ASCII编码和Unicode编码的区别"><a href="#ASCII编码和Unicode编码的区别" class="headerlink" title="ASCII编码和Unicode编码的区别"></a>ASCII编码和Unicode编码的区别</h2><p>ASCII编码是1个字节，而Unicode编码通常是2个字节。<br>字母<code>A</code>用ASCII编码是十进制的65，二进制的01000001；<br>字符<code>0</code>用ASCII编码是十进制的48，二进制的00110000，注意字符’0’和整数0是不同的；<br>汉字<code>中</code>已经超出了ASCII编码的范围，用Unicode编码是十进制的20013，二进制的01001110 00101101。<br>你可以猜测，如果把ASCII编码的A用Unicode编码，只需要在前面补0就可以，因此，A的Unicode编码是00000000 01000001。</p>
 <h1 id="UTF-32编码"><a href="#UTF-32编码" class="headerlink" title="UTF-32编码"></a>UTF-32编码</h1><p>使用32位表示一个字符</p>
 <h1 id="UTF-16编码"><a href="#UTF-16编码" class="headerlink" title="UTF-16编码"></a>UTF-16编码</h1><p>默认使用16位进行编码</p>
 <h1 id="UTF-8编码"><a href="#UTF-8编码" class="headerlink" title="UTF-8编码"></a>UTF-8编码</h1><p>将ASCII子集保持为8位，其余字符用16位或32位表示</p>
